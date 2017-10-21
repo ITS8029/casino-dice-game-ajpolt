@@ -1,5 +1,6 @@
 package com.example.casino;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import com.example.games.AlwaysLose;
@@ -12,12 +13,19 @@ public class Casino {
 		int totalCash = 100;
 		
 		while(totalCash > 0) {
-			System.out.println("Welcome to the casino! You have $" + totalCash);
+			ArrayList<BettingGame> games = new ArrayList<>();
 			
-			System.out.println("1. Blackjack");
-			System.out.println("2. Coin Flip");
-			System.out.println("3. Always Lose");
-			System.out.println("4. SimpleCraps");
+			games.add(new Blackjack());
+			games.add(new CoinFlip());
+			games.add(new AlwaysLose());
+			games.add(new SimpleCraps());
+			
+			System.out.println("\nWelcome to the casino! You have $" + totalCash);
+			
+			for(int x = 0; x < games.size(); x++) {
+				BettingGame game = games.get(x);
+				System.out.println((x + 1) + ". " + game.getGameName());
+			}
 			
 			System.out.println("Enter a number to choose:");
 			
@@ -27,14 +35,8 @@ public class Casino {
 			
 			BettingGame game;
 			
-			if(selection == 1) {
-				game = new Blackjack();
-			} else if (selection == 2) {
-				game = new CoinFlip();
-			} else if (selection == 3) {
-				game = new AlwaysLose();
-			} else if (selection == 4) {
-				game = new SimpleCraps();
+			if(selection > 0 && selection <= games.size()) {
+				game = games.get(selection - 1);
 			} else {
 				System.out.println("Invalid choice--Enter a nuber between 1-4");
 				continue;

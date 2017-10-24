@@ -1,4 +1,4 @@
-package com.example.cards;
+package com.example.casino;
 
 public class Card {
 	/**

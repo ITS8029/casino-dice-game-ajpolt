@@ -3,11 +3,6 @@ package com.example.casino;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import com.example.games.AlwaysLose;
-import com.example.games.Blackjack;
-import com.example.games.CoinFlip;
-import com.example.games.SimpleCraps;
-
 public class Casino {
 	public static void main(String[] args) {
 		int totalCash = 100;

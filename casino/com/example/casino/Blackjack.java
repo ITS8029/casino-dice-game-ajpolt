@@ -1,11 +1,7 @@
-package com.example.games;
+package com.example.casino;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-
-import com.example.cards.Card;
-import com.example.cards.Deck;
-import com.example.casino.BettingGame;
 
 public class Blackjack implements BettingGame {
 	private Deck deck;

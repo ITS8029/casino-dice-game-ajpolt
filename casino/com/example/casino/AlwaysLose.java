@@ -1,6 +1,4 @@
-package com.example.games;
-
-import com.example.casino.BettingGame;
+package com.example.casino;
 
 public class AlwaysLose implements BettingGame {
 

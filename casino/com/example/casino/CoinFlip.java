@@ -1,9 +1,7 @@
-package com.example.games;
+package com.example.casino;
 
 import java.util.Random;
 import java.util.Scanner;
-
-import com.example.casino.BettingGame;
 
 public class CoinFlip implements BettingGame {
 

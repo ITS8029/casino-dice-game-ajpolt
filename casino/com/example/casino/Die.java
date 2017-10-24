@@ -1,4 +1,4 @@
-package com.example.games;
+package com.example.casino;
 
 import java.util.Random;
 

@@ -6,7 +6,10 @@ public class SimpleCraps implements BettingGame {
 
 	@Override
 	public int playGame(int betAmount) {
-		// TODO Add your code here. Return the amount the user won:
+		// TODO Add your code here. Return the amount the user won (or a negative number if they lost!):
+		Die die = new Die();
+		int rollResult = die.roll();
+				
 		return 0;
 	}
 

@@ -1,6 +1,7 @@
 package com.example.games;
 
 import java.util.Random;
+import java.util.Scanner;
 
 import com.example.casino.BettingGame;
 
@@ -10,7 +11,37 @@ public class CoinFlip implements BettingGame {
 	public int playGame(int betAmount) {
 		Random random = new Random();
 		
-		boolean won = random.nextBoolean();
+		
+		
+		Scanner scanner = new Scanner(System.in);
+		String input = "";
+		
+		while(!(input.equals("h") || input.equals("t"))) {
+			System.out.println("Enter 'H' for Heads or 'T' for tails:");
+			
+			input = scanner.nextLine();
+			
+			//Convert to lowercase so we don't have to check for both uppercase and lowercase
+			input = input.toLowerCase();
+			
+			if(!(input.equals("h") || input.equals("t"))) {
+				System.out.println("Invalid choice. Options are 'H' or 'T'");
+			}
+		}
+		
+		boolean won;
+		
+		boolean heads = random.nextBoolean();
+		
+		System.out.print("The result was ");
+		
+		if(heads) {
+			System.out.println("heads");
+		} else {
+			System.out.println("tails");
+		}
+		
+		won = (input.equals("h") && heads) || (input.equals("t") && !heads);
 		
 		if(won) {
 			System.out.println("You win!");

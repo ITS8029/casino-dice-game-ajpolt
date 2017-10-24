@@ -16,7 +16,7 @@ public class Blackjack implements BettingGame {
 		
 		Card dealerFaceUpCard = deck.drawCard();
 		
-		System.out.println("The dealer shows " + dealerFaceUpCard.toString());
+		System.out.println("\nThe dealer shows " + dealerFaceUpCard.toString() + "\n");
 		
 		int playerTotal = playerTurn();
 		
@@ -93,10 +93,16 @@ public class Blackjack implements BettingGame {
 		String hitOrStand = null;
 		
 		do {
-			System.out.println("Your total is " + getTotalWithAces(total, aceCount));
+			System.out.println("\nYour total is " + getTotalWithAces(total, aceCount));
 			System.out.println("Enter 'H' to hit or 'S' to stand");
 			
 			hitOrStand = scanner.nextLine();
+			hitOrStand = hitOrStand.toUpperCase();
+			
+			while(!(hitOrStand.equals("H") || hitOrStand.equals("S"))) {
+				System.out.println("Invalid input. Please enter 'H' to hit or 'S' to stand: " );
+				hitOrStand = scanner.nextLine().toUpperCase();
+			}
 			
 			if(hitOrStand.equals("H")) {
 				Card nextCard = drawCard();
@@ -106,7 +112,6 @@ public class Blackjack implements BettingGame {
 					aceCount++;
 				}
 				
-				System.out.println("You drew the " + nextCard.toString());
 				System.out.println("Your total is now " + getTotalWithAces(total, aceCount));
 			}
 		} while (hitOrStand.equals("H") && getTotalWithAces(total, aceCount) < 21);

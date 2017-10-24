@@ -27,7 +27,7 @@ public class Casino {
 				System.out.println((x + 1) + ". " + game.getGameName());
 			}
 			
-			System.out.println("Enter a number to choose:");
+			System.out.println("Enter a number to choose a game:");
 			
 			Scanner myScanner = new Scanner(System.in);
 			
@@ -61,5 +61,7 @@ public class Casino {
 			}
 			totalCash += amountWon;
 		}
+		
+		System.out.println("You're out of money. Goodbye.");
 	}
 }

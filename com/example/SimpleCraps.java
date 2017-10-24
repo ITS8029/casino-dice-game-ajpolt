@@ -1,4 +1,4 @@
-package com.example.casino;
+package com.example;
 
 public class SimpleCraps implements BettingGame {
 

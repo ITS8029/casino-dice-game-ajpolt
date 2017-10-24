@@ -1,7 +1,13 @@
-package com.example.casino;
+package com.example;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import com.example.AlwaysLose;
+import com.example.BettingGame;
+import com.example.Blackjack;
+import com.example.CoinFlip;
+import com.example.SimpleCraps;
 
 public class Casino {
 	public static void main(String[] args) {

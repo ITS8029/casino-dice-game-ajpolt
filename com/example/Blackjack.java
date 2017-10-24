@@ -1,6 +1,5 @@
-package com.example.casino;
+package com.example;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Blackjack implements BettingGame {

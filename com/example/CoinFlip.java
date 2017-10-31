@@ -9,8 +9,6 @@ public class CoinFlip implements BettingGame {
 	public int playGame(int betAmount) {
 		Random random = new Random();
 		
-		
-		
 		Scanner scanner = new Scanner(System.in);
 		String input = "";
 		

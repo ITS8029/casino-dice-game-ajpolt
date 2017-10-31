@@ -13,8 +13,12 @@ public class Casino {
 	public static void main(String[] args) {
 		int totalCash = 100;
 		
+		test();
+		
 		while(totalCash > 0) {
 			ArrayList<BettingGame> games = new ArrayList<>();
+			
+			System.out.println("Press 1 for Blackjack");
 			
 			games.add(new Blackjack());
 			games.add(new CoinFlip());
@@ -65,4 +69,23 @@ public class Casino {
 		
 		System.out.println("You're out of money. Goodbye.");
 	}
+	
+	private static void test() {
+		int x = 2;
+		x ++;
+		System.out.println("X is " + x);
+		
+		if(x == 1) {
+			return;
+		}
+		
+		x ++;
+		System.out.println("X is " + x);
+	}
+	
+	
+	
+	
+	
+	
 }

@@ -4,22 +4,43 @@ public class SimpleCraps implements BettingGame {
 
 	@Override
 	public int playGame(int betAmount) {
-		// TODO Add your code here. Return the amount the user won (or a negative number if they lost!)
+		Die die1 = new Die();
+		Die die2 = new Die();
 		
-		//To create a die, use:
-		//Die die = new Die();
+		int playerTotal = 0;
+		int rollTotal = 0;
 		
-		//To roll the die you created, use:
-		//int rollResult = die.roll();
+		while(rollTotal != 7) {
+			rollTotal = die1.roll() + die2.roll();
+			
+			System.out.println("You rolled a " + rollTotal);
+			
+			playerTotal += rollTotal;
+		}
 		
-		//If the result is a win, return betAmount:
-		//return betAmount;
+		System.out.println("Player total: " + playerTotal);
 		
-		//If the result is a loss, return -betAmount:
-		//return -betAmount;
+		rollTotal = 0;
+		int dealerTotal = 0;
 		
-		//If the result is a draw, return 0:
-		return 0;
+		while(rollTotal != 7) {
+			rollTotal = die1.roll() + die2.roll();
+			System.out.println("Dealer rolled a " + rollTotal);
+			dealerTotal += rollTotal;
+		}
+		
+		System.out.println("Dealer Total: " + dealerTotal);
+		
+		if(playerTotal > dealerTotal) {
+			System.out.println("You win!");
+			return betAmount;
+		} else if (dealerTotal > playerTotal) {
+			System.out.println("You lose!");
+			return -betAmount;
+		} else {
+			System.out.println("You tied");
+			return 0;
+		}
 	}
 
 	@Override
